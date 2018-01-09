@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Light Map Generation</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+				font-family: Monospace;
+				background-color: #000;
+				color: #000;
+				margin: 0px;
+				overflow: hidden;
+			}
+			
+			#info {
+				position: absolute;
+				top: 5px;
+				width: 100%;
+				text-align: center;
+				color: #ffffff;
+			}		
+			
+		</style>
+	</head>
+	<body>
+
+		<div id="container"> </div>
+		<script src="js/three.min.js"> </script>
+	</body>
+	<script>
+		var renderer = new THREE.WebGLRenderer();
+		renderer.autoClear = false;
+		// 1 is full resolution, 0.5 is half, 0.25 is quarter, etc. (must be > than 0.0)
+		renderer.setPixelRatio(pixelRatio);
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		// renderer.context.getExtension('OES_texture_float');
+		
+		var container = document.getElementById( 'container' );
+		container.appendChild( renderer.domElement );
+	</script>
+</html>
